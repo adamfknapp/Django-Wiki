@@ -1,5 +1,5 @@
 import re
-
+import markdown2
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
@@ -29,9 +29,11 @@ def get_entry(title):
     """
     Retrieves an encyclopedia entry by its title. If no such
     entry exists, the function returns None.
+    Assumes title is in MD and returns html.
     """
     try:
         f = default_storage.open(f"entries/{title}.md")
-        return f.read().decode("utf-8")
+        f = f.read().decode("utf-8")
+        return markdown2.markdown(f)
     except FileNotFoundError:
         return None
