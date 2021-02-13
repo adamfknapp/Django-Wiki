@@ -8,9 +8,9 @@ def index(request):
         "entries": util.list_entries()
     })
 
-def helloworld(request):
-    return HttpResponse("Hello, world!")
-
 def title(request, title):
+    """
+    Get content of the encyclopedia entry per requierment 2
+    """
     f = util.get_entry(title)
     return HttpResponse(f)

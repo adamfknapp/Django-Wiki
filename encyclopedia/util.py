@@ -31,10 +31,11 @@ def get_entry(title):
     Retrieves an encyclopedia entry by its title. If no such
     entry exists, the function returns None.
     Assumes title is in MD and returns html.
+    See Requierment 1 in read me. 
     """
     try:
         f = default_storage.open(f"entries/{title}.md")
         f = f.read().decode("utf-8")
         return markdown2.markdown(f)
     except FileNotFoundError:
-        return HttpResponseNotFound('<h1>Page NOT found</h1>')
+        return HttpResponseNotFound("<h1>Page NOT found</h1>")
