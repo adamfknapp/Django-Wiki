@@ -2,6 +2,7 @@ import re
 import markdown2
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
+from django.http import HttpResponse, HttpResponseNotFound
 
 
 def list_entries():
@@ -36,4 +37,4 @@ def get_entry(title):
         f = f.read().decode("utf-8")
         return markdown2.markdown(f)
     except FileNotFoundError:
-        return None
+        return HttpResponseNotFound('<h1>Page NOT found</h1>')

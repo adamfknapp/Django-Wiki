@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: white;
+    background-color:green;
 }
 
 code {
@@ -8,6 +8,7 @@ code {
 }
 
 h1 {
+    color: red
     margin-top: 0px;
     padding-top: 20px;
 }
