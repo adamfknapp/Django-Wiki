@@ -38,4 +38,5 @@ def get_entry(title):
         f = f.read().decode("utf-8")
         return markdown2.markdown(f)
     except FileNotFoundError:
-        return HttpResponseNotFound("<h1>Page NOT found</h1>")
+        # Per requierment 3 of Readme
+        return "<h1>Page not found</h1>"

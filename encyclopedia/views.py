@@ -12,5 +12,8 @@ def title(request, title):
     """
     Get content of the encyclopedia entry per requierment 2
     """
-    f = util.get_entry(title)
-    return HttpResponse(f)
+    return render(request, "encyclopedia/title.html", {
+        "title": util.get_entry(title)
+    })
+    #f = util.get_entry(title)
+    #return HttpResponse(f)

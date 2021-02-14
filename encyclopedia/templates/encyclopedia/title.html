@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    title
+{% endblock %}
+
+{% block body %}
+    
+    <!-- Requierments 4 & 5 per Readme -->
+    {% autoescape off %}
+    {{ title }}
+    {% endautoescape %}
+    
+{% endblock %}
