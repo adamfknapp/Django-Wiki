@@ -37,7 +37,7 @@ You can find the template by looking at `encyclopedia/templates/encyclopedia/ind
 Complete the implementation of your Wiki encyclopedia. You must fulfill the following requirements:
 
 - [ ]   **(1) Entry Page**: Visiting `/wiki/TITLE`, where `TITLE` is the title of an encyclopedia entry, should render a page that displays the contents of that encyclopedia entry.
-    - [ ]   **(2)** The view should get the content of the encyclopedia entry by calling the appropriate `util` function.
+    - [x]   **(2)** The view should get the content of the encyclopedia entry by calling the appropriate `util` function.
     - [ ]   **(3)** If an entry is requested that does not exist, the user should be presented with an error page indicating that their requested page was not found.
     - [ ]   **(4)** If the entry does exist, the user should be presented with a page that displays the content of the entry. 
     - [ ]   **(5)** The title of the page should include the name of the entry.
