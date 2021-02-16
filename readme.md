@@ -70,3 +70,7 @@ The following references were very helpful in completing this project:
 
 * Debugging references
   * https://stackoverflow.com/questions/4848611/rendering-a-template-variable-as-html
+* https://learndjango.com/tutorials/django-search-tutorial
+* https://learndjango.com/tutorials/django-markdown-tutorial
+* https://www.youtube.com/watch?v=AHcBPlPMqtc
+* https://stackoverflow.com/questions/53920004/add-q-searchterm-in-django-url

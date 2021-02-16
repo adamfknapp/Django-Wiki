@@ -34,9 +34,10 @@ def get_entry(title):
     See Requierment 1 in read me. 
     """
     try:
+        #Per requierment 1, 2s of Readme 
         f = default_storage.open(f"entries/{title}.md")
         f = f.read().decode("utf-8")
         return markdown2.markdown(f)
     except FileNotFoundError:
-        # Per requierment 3 of Readme
+        #Per requirement 3 of Readme
         return "<h1>Page not found</h1>"
