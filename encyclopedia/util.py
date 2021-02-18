@@ -41,3 +41,25 @@ def get_entry(title):
     except FileNotFoundError:
         #Per requirement 3 of Readme
         return "<h1>Page not found</h1>"
+
+def search(query):
+    """
+    Accepts a string query and returns a list of matches
+    See Requierment 7, 8, 9, 10 in read me. 
+    """
+
+    #Standardize query and entries. lower case letters and numbers
+    query = re.sub(r'\W+', '', query).strip().lower()
+    entries = [x.strip().lower() for x in list_entries()]
+    
+    #search for exact matches per requierment 8
+    if query in entries:
+        return [query]
+
+    #Search for partial matches per requierment 9
+    elif query in '\t'.join(entries):
+        return [x for x in entries if query in x]
+    
+    #return an empty list if no matches
+    else: 
+        return []

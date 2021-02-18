@@ -5,5 +5,4 @@ urlpatterns = [
     path("", views.index, name="index")
     , path("wiki/<str:title>", views.title, name="title")
     , path('search/',views.search,name='search')
-   # , path("", views.search, name="search")
 ]

@@ -74,3 +74,4 @@ The following references were very helpful in completing this project:
 * https://learndjango.com/tutorials/django-markdown-tutorial
 * https://www.youtube.com/watch?v=AHcBPlPMqtc
 * https://stackoverflow.com/questions/53920004/add-q-searchterm-in-django-url
+* [for partial string search] https://stackoverflow.com/questions/16380326/check-if-substring-is-in-a-list-of-strings
