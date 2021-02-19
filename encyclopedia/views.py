@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django import forms
 from random import randint
 from . import util
 
@@ -16,6 +17,21 @@ def title(request, title):
     """
     return render(request, "encyclopedia/title.html", {
         "title": util.get_entry(title)
+    })
+
+class NewEntryForm(forms.Form):
+    """
+    Define form used to create new entry per requierment 11 of readme
+    """
+    title = forms.CharField(label="title")
+    body = forms.CharField(label="body")
+
+def new(request):
+    """
+    Create a new entry per requierment 11 of readme
+    """
+    return render(request, "encyclopedia/new.html", {
+        "form": NewEntryForm()
     })
 
 def random(request):
