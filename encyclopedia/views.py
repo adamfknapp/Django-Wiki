@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from random import randint
 from . import util
 
 
@@ -17,6 +18,16 @@ def title(request, title):
         "title": util.get_entry(title)
     })
 
+def random(request):
+    """
+    Get a random page per requierment 20 of readme
+    """
+    entries = util.list_entries()
+    n = randint(0,len(entries)-1)
+    return render(request, "encyclopedia/title.html", {
+            "title": util.get_entry(entries[n])
+        })
+
 def search(request):
     """
     Get contents of the search per requierments 7, 8, 9, 10
@@ -24,7 +35,7 @@ def search(request):
     query = request.GET.get('q')
     results = util.search(query)
 
-    #if an exact match return open that entry
+    #if an exact match open that entry
     if len(results) == 1:
         return render(request, "encyclopedia/title.html", {
             "title": util.get_entry(results[0])
@@ -34,6 +45,7 @@ def search(request):
         return render(request, "encyclopedia/search_results.html", {
             "entries": results
         })
+    #else prompt user for new input
     else:
         return render(request, "encyclopedia/search_empty.html" 
         )

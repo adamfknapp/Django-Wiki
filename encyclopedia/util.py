@@ -48,7 +48,7 @@ def search(query):
     See Requierment 7, 8, 9, 10 in read me. 
     """
 
-    #Standardize query and entries. lower case letters and numbers
+    #Standardize query and entries. Strip query of special characters.
     query = re.sub(r'\W+', '', query).strip().lower()
     entries = [x.strip().lower() for x in list_entries()]
     

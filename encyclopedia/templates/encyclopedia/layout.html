@@ -16,9 +16,6 @@
                 <form action="{%url 'search' %}"  method="get">
                     <input type="text" name="q" placeholder="Search...">
                  </form>
-            <!--     <form action="/?q="  method="get">
-                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
-                </form> -->
                 <div>
                     <a href="{% url 'index' %}">Home</a>
                 </div>
@@ -26,7 +23,7 @@
                     Create New Page
                 </div>
                 <div>
-                    Random Page
+                    <a href="{% url 'random' %}">Random Page</a>
                 </div>
                 {% block nav %}
                 {% endblock %}
