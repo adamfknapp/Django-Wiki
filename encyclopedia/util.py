@@ -4,6 +4,8 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 from django.http import HttpResponse, HttpResponseNotFound
 
+def clean_title (text):
+    return re.sub('[^A-Za-z0-9]+', '', text).strip().lower()
 
 def list_entries():
     """
@@ -49,7 +51,7 @@ def search(query):
     """
 
     #Standardize query and entries. Strip query of special characters.
-    query = re.sub(r'\W+', '', query).strip().lower()
+    query = clean_title(query)
     entries = [x.strip().lower() for x in list_entries()]
     
     #search for exact matches per requierment 8
