@@ -11,7 +11,7 @@ def index(request):
         "entries": util.list_entries()
     })
 
-def title(request, title):
+def get_title(request, title):
     """
     Get content of the encyclopedia entry per requierment 2
     """
@@ -25,9 +25,8 @@ class NewEntryForm(forms.Form):
     """
     Define form used to create new entry per requierment 11 of readme
     """
-    title = forms.CharField(label="title", max_length=50, required=True)
-    content = forms.CharField(widget= forms.Textarea,label="content"
-                                , max_length=5000, required=True)
+    title = forms.CharField( max_length=50, required=True)
+    content = forms.CharField(widget= forms.Textarea, max_length=1000, required=True)
 
 def new(request):
     """
@@ -39,10 +38,18 @@ def new(request):
         if form.is_valid():
             title = util.clean_title(form.cleaned_data['title'])
             content = form.cleaned_data['content']
-            util.save_entry(title, content)   
-            # redirect to a new URL:
-            return render(request, "encyclopedia/submission_confirm.html" 
-        )
+           
+            #concatenate title to content for consistent display
+            # ------>   Start here -----> content = f{'newtext ->' {content} }
+
+            #If the title is unique per requierment 14 in readme
+            if title not in util.list_entries():
+                util.save_entry(title, content) 
+                #direct user to newly created page per requierment 15 of readme
+                return get_title(request, title)
+            else:
+                return render(request, "encyclopedia/error.html" )
+        
     #Else create a blank form
     else:
         return render(request, "encyclopedia/new.html", {

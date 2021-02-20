@@ -9,7 +9,12 @@
 
     <form action="{% url 'new' %}" method="post">
         {% csrf_token %}
-        {{ form }}
+        <h4>Title</h4>
+        {{ form.title }}
+        <br>
+        <h4>Content</h4>
+        {{ form.content }}
+        <br>
         <input type="submit" value="Submit">
     </form>
 
