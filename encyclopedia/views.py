@@ -21,13 +21,12 @@ def get_title(request, title):
     })
 
 
-def edit(request, title):
+def edit(request, title_name):
     """
     Edit the contents of a title per requierments 16 of readme
     """
     return render(request, "encyclopedia/edit.html", {
-        "title_name": title
-        ,"content": util.get_entry(title)
+        "title_name": title_name
     })
 
 

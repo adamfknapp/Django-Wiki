@@ -7,7 +7,7 @@
 {% block body %}
     <h1>New Entry</h1>
 
-    <form action="{% url 'new' %}" method="post">
+    <form action="{% url 'new' %}" method="post", rows="10">
         {% csrf_token %}
         <h4>Title</h4>
         {{ form.title }}

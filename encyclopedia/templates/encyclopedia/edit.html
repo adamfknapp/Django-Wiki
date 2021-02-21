@@ -7,13 +7,14 @@
 {% block body %}
     <h1>Edit {{ title_name }}</h1>
 
-    <form action="{% url 'new' %}" method="post">
+<!--     <form action="{% url 'new' %}" method="post">
         {% csrf_token %}
         {{ form.content }}
         <br>
         <input type="submit" value="Submit">
-    </form>
-<!--     <textarea class="form-control" rows="10" id="aboutme">
-        {{ form.aboutme.value }}</textarea> -->
+    </form> 
+    <textarea class="form-control" rows="10" id="aboutme">
+        text area body </textarea> 
+        -->
 
 {% endblock %}
