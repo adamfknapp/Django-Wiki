@@ -25,8 +25,11 @@ def edit(request, title_name):
     """
     Edit the contents of a title per requierments 16 of readme
     """
+    #get content from file
+    content = util.get_entry(title_name, return_html=False)
     return render(request, "encyclopedia/edit.html", {
         "title_name": title_name
+        , "content": content
     })
 
 
