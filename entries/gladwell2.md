@@ -1,1 +1,0 @@
-# gladwell 2

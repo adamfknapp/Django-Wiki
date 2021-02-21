@@ -36,11 +36,14 @@ def new(request):
     if request.method == "POST":
         form = NewEntryForm(request.POST)
         if form.is_valid():
-            title = util.clean_title(form.cleaned_data['title'])
+            title = form.cleaned_data['title']
             content = form.cleaned_data['content']
-           
-            #concatenate title to content for consistent display
-            # ------>   Start here -----> content = f{'newtext ->' {content} }
+            
+            #standardize content with title header
+            content = f"#{title}\n\n{content}"
+            #standardize title for file name
+            title = util.clean_title(form.cleaned_data['title'])
+
 
             #If the title is unique per requierment 14 in readme
             if title not in util.list_entries():
