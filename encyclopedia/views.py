@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django import forms
 from random import randint
@@ -76,9 +76,9 @@ def random(request):
     """
     entries = util.list_entries()
     n = randint(0,len(entries)-1)
-    return render(request, "encyclopedia/title.html", {
-            "title": util.get_entry(entries[n])
-        })
+    target_entry = entries[n]
+    return redirect(f"/wiki/{ target_entry }")
+
 
 def search(request):
     """
