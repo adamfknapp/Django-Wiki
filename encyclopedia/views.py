@@ -21,6 +21,16 @@ def get_title(request, title):
     })
 
 
+def edit(request, title):
+    """
+    Edit the contents of a title per requierments 16 of readme
+    """
+    return render(request, "encyclopedia/edit.html", {
+        "title_name": title
+        ,"content": util.get_entry(title)
+    })
+
+
 class NewEntryForm(forms.Form):
     """
     Define form used to create new entry per requierment 11 of readme
