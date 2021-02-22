@@ -6,6 +6,11 @@
 
 {% block body %}
     <h1>Edit {{ title_name }}</h1>
-    <textarea class="form-control" rows="10"> {{ content }} </textarea>
-    <input type="submit" value="Submit">
+
+    <form  method="post">
+        {% csrf_token %}
+        {{ form.content }} 
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 {% endblock %}

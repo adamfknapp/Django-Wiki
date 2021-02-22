@@ -21,15 +21,30 @@ def get_title(request, title):
     })
 
 
+class EditForm(forms.Form):
+    """
+    Define form used to edit entries per requierment 16 of readme
+    """
+    content = forms.CharField(widget= forms.Textarea, max_length=1000, required=True)
+
 def edit(request, title_name):
     """
     Edit the contents of a title per requierments 16 of readme
     """
+    #Listen for a POST request and process data when detected
+    if request.method == "POST":
+        form = EditForm(request.POST)
+        if form.is_valid():
+            edited_content = form.cleaned_data['content']
+            util.save_entry(title_name, edited_content)
+            return redirect(f"/wiki/{ title_name }")
+    
     #get content from file
-    content = util.get_entry(title_name, return_html=False)
-    return render(request, "encyclopedia/edit.html", {
-        "title_name": title_name
-        , "content": content
+    else:
+        content = util.get_entry(title_name, return_html=False)
+        return render(request, "encyclopedia/edit.html", {
+            "form": EditForm({"content": content})
+            , "title_name": title_name
     })
 
 
@@ -92,9 +107,8 @@ def search(request):
 
     #if an exact match open that entry
     if len(results) == 1:
-        return render(request, "encyclopedia/title.html", {
-            "title": util.get_entry(results[0])
-        })
+        return redirect(f"/wiki/{ results[0] }")
+
     #if multiple partial matches open list of options
     elif len(results) > 1:
         return render(request, "encyclopedia/search_results.html", {
