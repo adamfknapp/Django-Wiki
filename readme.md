@@ -36,28 +36,28 @@ You can find the template by looking at `encyclopedia/templates/encyclopedia/ind
 
 Complete the implementation of your Wiki encyclopedia. You must fulfill the following requirements:
 
-- [ ]   **(1) Entry Page**: Visiting `/wiki/TITLE`, where `TITLE` is the title of an encyclopedia entry, should render a page that displays the contents of that encyclopedia entry.
+- [x]   **(1) Entry Page**: Visiting `/wiki/TITLE`, where `TITLE` is the title of an encyclopedia entry, should render a page that displays the contents of that encyclopedia entry.
     - [x]   **(2)** The view should get the content of the encyclopedia entry by calling the appropriate `util` function.
-    - [ ]   **(3)** If an entry is requested that does not exist, the user should be presented with an error page indicating that their requested page was not found.
-    - [ ]   **(4)** If the entry does exist, the user should be presented with a page that displays the content of the entry. 
-    - [ ]   **(5)** The title of the page should include the name of the entry.
+    - [x]   **(3)** If an entry is requested that does not exist, the user should be presented with an error page indicating that their requested page was not found.
+    - [x]   **(4)** If the entry does exist, the user should be presented with a page that displays the content of the entry. 
+    - [x]   **(5)** The title of the page should include the name of the entry.
 - [x]   **(6) Index Page**: Update `index.html` such that, instead of merely listing the names of all pages in the encyclopedia, user can click on any entry name to be taken directly to that entry page.
-- [ ]   **(7) Search**: Allow the user to type a query into the search box in the sidebar to search for an encyclopedia entry.
-    - [ ]   **(8)** If the query matches the name of an encyclopedia entry, the user should be redirected to that entry’s page.
-    - [ ]   **(9)** If the query does not match the name of an encyclopedia entry, the user should instead be taken to a search results page that displays a list of all encyclopedia entries that have the query as a substring. For example, if the search query were `Py`, then `Python` should appear in the search results.
-    - [ ]   **(10)** Clicking on any of the entry names on the search results page should take the user to that entry’s page.
-- [ ]   **(11) New Page**: Clicking “Create New Page” in the sidebar should take the user to a page where they can create a new encyclopedia entry.
-    - [ ]   **(12)** Users should be able to enter a title for the page and, in a [`textarea`](https://www.w3schools.com/tags/tag_textarea.asp), should be able to enter the Markdown content for the page.
-    - [ ]   **(13)** Users should be able to click a button to save their new page.
-    - [ ]   **(14)** When the page is saved, if an encyclopedia entry already exists with the provided title, the user should be presented with an error message.
-    - [ ]   **(15)** Otherwise, the encyclopedia entry should be saved to disk, and the user should be taken to the new entry’s page.
-- [ ]   **(16) Edit Page**: On each entry page, the user should be able to click a link to be taken to a page where the user can edit that entry’s Markdown content in a `textarea`.
-    - [ ]   **(17)** The `textarea` should be pre-populated with the existing Markdown content of the page. (i.e., the existing content should be the initial `value` of the `textarea`).
-    - [ ]   **(18)** The user should be able to click a button to save the changes made to the entry.
-    - [ ]   **(19)** Once the entry is saved, the user should be redirected back to that entry’s page.
-- [ ]   **(20) Random Page**: Clicking “Random Page” in the sidebar should take user to a random encyclopedia entry.
-- [ ]   **(21) Markdown to HTML Conversion**: On each entry’s page, any Markdown content in the entry file should be converted to HTML before being displayed to the user. You may use the [`python-markdown2`](https://github.com/trentm/python-markdown2) package to perform this conversion, installable via `pip3 install markdown2`.
-- [ ] **(22) Style** Check style of python code with `pycodestyle` or similar tool.
+- [x]   **(7) Search**: Allow the user to type a query into the search box in the sidebar to search for an encyclopedia entry.
+    - [x]   **(8)** If the query matches the name of an encyclopedia entry, the user should be redirected to that entry’s page.
+    - [x]   **(9)** If the query does not match the name of an encyclopedia entry, the user should instead be taken to a search results page that displays a list of all encyclopedia entries that have the query as a substring. For example, if the search query were `Py`, then `Python` should appear in the search results.
+    - [x]   **(10)** Clicking on any of the entry names on the search results page should take the user to that entry’s page.
+- [x]   **(11) New Page**: Clicking “Create New Page” in the sidebar should take the user to a page where they can create a new encyclopedia entry.
+    - [x]   **(12)** Users should be able to enter a title for the page and, in a [`textarea`](https://www.w3schools.com/tags/tag_textarea.asp), should be able to enter the Markdown content for the page.
+    - [x]   **(13)** Users should be able to click a button to save their new page.
+    - [x]   **(14)** When the page is saved, if an encyclopedia entry already exists with the provided title, the user should be presented with an error message.
+    - [x]   **(15)** Otherwise, the encyclopedia entry should be saved to disk, and the user should be taken to the new entry’s page.
+- [x]   **(16) Edit Page**: On each entry page, the user should be able to click a link to be taken to a page where the user can edit that entry’s Markdown content in a `textarea`.
+    - [x]   **(17)** The `textarea` should be pre-populated with the existing Markdown content of the page. (i.e., the existing content should be the initial `value` of the `textarea`).
+    - [x]   **(18)** The user should be able to click a button to save the changes made to the entry.
+    - [x]   **(19)** Once the entry is saved, the user should be redirected back to that entry’s page.
+- [x]   **(20) Random Page**: Clicking “Random Page” in the sidebar should take user to a random encyclopedia entry.
+- [x]   **(21) Markdown to HTML Conversion**: On each entry’s page, any Markdown content in the entry file should be converted to HTML before being displayed to the user. You may use the [`python-markdown2`](https://github.com/trentm/python-markdown2) package to perform this conversion, installable via `pip3 install markdown2`.
+- [x] **(22) Style** Check style of python code with `pycodestyle` or similar tool.
   
 
 ## Hints

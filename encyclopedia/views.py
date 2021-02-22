@@ -38,6 +38,7 @@ def edit(request, title_name):
             edited_content = form.cleaned_data['content']
             util.save_entry(title_name, edited_content)
             return redirect(f"/wiki/{ title_name }")
+
     
     #get content from file
     else:
